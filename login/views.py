@@ -1,5 +1,21 @@
 from django.shortcuts import render
+from django.contrib.auth.models import User, auth
+from django.contrib import messages
 
 
 def login(request):
-    return render(request, 'login.html')
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+        else:
+            messages.error(request, "Invalid Credentials")
+            return render(request, 'login.html')
+
+    else:
+        return render(request, 'login.html')
