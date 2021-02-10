@@ -11,21 +11,6 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
     <title>| Conversation Realms |</title>
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -39,25 +24,33 @@
           </button>
     
           <div class="collapse navbar-collapse" id="navbarsExample07XL">
+            <div id="search">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item active" style="padding-left: 10px; padding-right: 10px;">
                 <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/">Home</a>
               </li>
+              {% if not user.is_authenticated %}
               <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
                 <a class="nav-link" href="http://127.0.0.1:8000/login/">Login</a>
               </li>
+              {% else %}
               <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
                 <a class="nav-link" href="http://127.0.0.1:8000/login/logout/">Logout</a>
               </li>
+              {% endif %}
+              {% if not user.is_authenticated %}
               <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
                 <a class="nav-link" href="#">Sign Up</a>
               </li>
+              {% else %}
               <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
                 <a class="nav-link" href="#">Settings</a>
               </li>
+              
               <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
                 <a class="nav-link" href="#">Help</a>
               </li>
+              
               <li class="nav-item dropdown" style="padding-left: 10px; padding-right: 10px;">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Conversations</a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
@@ -73,12 +66,13 @@
                   <li><a class="dropdown-item" href="#">Profile Settings</a></li>
                   <li><a class="dropdown-item" href="#">Profile History</a></li>
                 </ul>
-                  </li>
-            <form>
-              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-            </form>
-    
+              </li>
+              {% endif %}
               
+                <form>
+                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                </form>
+              </ul>
           </div>
         </div>
       </nav>

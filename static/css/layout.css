@@ -1,3 +1,7 @@
 .brand-spacer {
     padding-right: 150px;
 }
+
+#search {
+    align-self: left;
+}
