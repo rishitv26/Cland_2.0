@@ -163,22 +163,6 @@
 
         <hr class="featurette-divider">
         
-        <div class="row">
-            {% for conversation in conversations %}
-            <div style="width: 300px;">
-                <div class="card" style="width: 18rem">
-                    <img alt="{{ conversation.title }}" class="card-img-top" src="{{ conversation.profileImg_url }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ conversation.title }}</h5>
-                        <p class="card-text">{{ conversation.admin }}</p>
-                        <a class="btn btn-primary" href="#">Go to conversation:</a>
-                    </div>
-                </div>
-            </div>
-            {% empty %}
-            <h3>You haven't checked out any conversations</h3>
-            {% endfor %}
-        </div>
 
         <hr class="featurette-divider">
 
