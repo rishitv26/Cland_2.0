@@ -14,19 +14,16 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-xl">
-          <div class="brand-spacer">
-          <a class="navbar-brand">Conversation Realms</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
+      <div>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-    
-          <div class="collapse navbar-collapse" id="navbarsExample07XL">
-            <div id="search">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: ;">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item active" style="padding-left: 10px; padding-right: 10px;">
+              <li class="nav-item active" style="padding-left: 10px; padding-right: 10px">
                 <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/">Home</a>
               </li>
               {% if not user.is_authenticated %}
@@ -65,17 +62,17 @@
                   <li><a class="dropdown-item" href="#">My Profile </a></li>
                   <li><a class="dropdown-item" href="#">Profile Settings</a></li>
                   <li><a class="dropdown-item" href="#">Profile History</a></li>
-                </ul>
-              </li>
-              {% endif %}
-              
-                <form>
-                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                </form>
-              </ul>
+                  </ul>
+                  {% endif %}
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
           </div>
         </div>
       </nav>
+      </div>
     </header>
     {% block content %}
     {% endblock %}
