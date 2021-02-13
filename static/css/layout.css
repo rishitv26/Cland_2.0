@@ -5,3 +5,8 @@
 #search {
     align-self: left;
 }
+
+.user-nav {
+    border: solid red;
+    /* border-bottom: 2px solid gray; */
+}
