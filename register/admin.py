@@ -1,3 +1,7 @@
 from django.contrib import admin
+from home.models import UserPics
 
-# Register your models here.
+class UserpicsAdmin(admin.ModelAdmin):
+    list_display = ['pic', 'user']
+
+admin.site.register(UserPics, UserpicsAdmin)

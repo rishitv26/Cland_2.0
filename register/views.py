@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth, User
 from django.contrib import messages
+from home.models import UserPics
 
 
 def register(request):
@@ -20,7 +21,9 @@ def register(request):
                 return render(request, 'register.html')
             else:
                 user = User.objects.create_user(username=Username, password=Passwordcon, email=Email, first_name=FullName, last_name='no data')
+                pic = UserPics(user=Username, pic='https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg')
                 user.save()
+                pic.save()
                 return redirect("/")
         else:
             messages.info(request, "Confirm your password, please.")

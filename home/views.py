@@ -1,5 +1,8 @@
 from django.shortcuts import render
-
+from .models import UserPics
 
 def index(request):
-    return render(request, "home.html")
+    pics = UserPics.objects.all()
+    return render(request, "home.html", {
+       'pics': pic 
+    })
