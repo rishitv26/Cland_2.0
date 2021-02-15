@@ -10,35 +10,41 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <title>| Conversation Realms |</title>
+    {% load static %}
+    <link href="{% static 'css/login.css' %}">
   </head>
   <body>
-<center class ="content">
-    <h1>Sign In:</h1>
-    <table class = "login">
-    <form action="" method="POST">
-      {% csrf_token %}
-      <tr>
-        <td>Username:</td>
-        <td><input type ="text" placeholder ="username" name='username'></td>
-      </tr>
-      <tr>
-        <td>Password</td>
-        <td><input type ="password" placeholder ="password" name='password'></td>
-      </tr>
-        <tr>
-          <td><input type="submit" value="Sign In" id ="button"></td>
-        </tr>
-    </form>
-    </table>
-    <br>
-    <div>
-      {% for message in messages %}
-      <h3>{{ message }}</h3>
-      {% endfor %}
-    </div>
-</center>
-  
-
+    <main class="form-signin">
+        <div id="box">
+            <div id="padding">
+                <form action="http://127.0.0.1:8000/userhome/" method="POST">
+                    {% csrf_token %}
+                    <img class="mb-4"
+                         src="https://cdn.freebiesupply.com/logos/large/2x/bootstrap-4-logo-png-transparent.png" alt=""
+                         width="150px">
+                    <h1 align="center" class="h3 mb-3 fw-normal">Log into Conversation Realms</h1>
+                    <label for="inputEmail" class="visually-hidden">Username</label>
+                    <input type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus
+                           name="username"><br>
+                    <label for="inputPassword" class="visually-hidden">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required
+                           name="password">
+                    <div class="checkbox mb-3">
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                    <p class="text muted">&copy; 2020-2021</p>
+                </form>
+    
+                <div id="popup" class="container">
+                    {% for message in messages %}
+                    <h3>{{ message }}</h3>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    
+    
+    </main>
     <!-- Js begins here: -->
     <script 
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
