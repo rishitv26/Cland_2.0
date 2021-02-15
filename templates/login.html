@@ -2,16 +2,76 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    {%load static%}
-    <link rel ="stylesheet" href ="{%static 'login.css'%}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <title>| Conversation Realms |</title>
-    {% load static %}
-    <link href="{% static 'css/login.css' %}">
+
+    <style>
+      body {
+      background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-011.jpg');
+      }
+  
+      .form-signin {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: auto;
+      }
+      .form-signin .checkbox {
+        font-weight: 400;
+      }
+      .form-signin .form-control {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+      }
+      .form-signin .form-control:focus {
+        z-index: 2;
+      }
+      .form-signin input[type="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+  
+      .mb-4 {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+      }
+  
+      #box {
+      background: white;
+      height: 690px;
+      width: 500px;
+      border-radius: 10px 10px 10px 10px;
+      border: 10px solid green;
+      overflow: auto;
+      }
+  
+      #padding {
+      padding: 25px;
+      size: 50%;
+      margin: 10 auto;
+      }
+  
+      body {
+      padding-right: 1000px;
+      }
+  
+  </style>
+
   </head>
   <body>
     <main class="form-signin">
