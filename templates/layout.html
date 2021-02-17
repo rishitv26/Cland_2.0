@@ -2,75 +2,97 @@
 <html lang="en">
   <head>
   <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
     <title>| Conversation Realms |</title>
-
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-xl">
-          <div class="brand-spacer">
-          <a class="navbar-brand">Conversation Realms</a>
+      <div>
+        {% if not user.is_authenticated %}
+        <nav class="navbar navbar-dark bg-dark">
+        {% else %}
+        <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        {% endif %}
+          <div class="container-fluid">
+            {% if not user.is_authenticated %}
+            <a class="navbar-brand" href="#">Navbar</a>
+            {% else %}
+              <a class="navbar-brand">
+                <img src="http://webmeup.com/upload/blog/lead-image-105.png" alt="Profile pic" width="50" height="44" id='loged-nav'>
+              </a>
+            {% endif %}
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item active" style="padding-left: 10px; padding-right: 10px">
+                  <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/">Home</a>
+                </li>
+                {% if not user.is_authenticated %}
+                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link" href="http://127.0.0.1:8000/login/">Login</a>
+                </li>
+                {% else %}
+                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link" href="http://127.0.0.1:8000/login/logout/">Logout</a>
+                </li>
+                {% endif %}
+                {% if not user.is_authenticated %}
+                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link" href="http://127.0.0.1:8000/create-account/">Sign Up</a>
+                </li>
+                {% else %}
+                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link" href="#">Settings</a>
+                </li>
+                
+                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link" href="#">Help</a>
+                </li>
+                
+                <li class="nav-item dropdown" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Conversations</a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
+                    <li><a class="dropdown-item" href="#">Chats</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Hangouts</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Calls</a></li>
+                  </ul>
+                    <li>
+                      <li class="nav-item dropdown" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
+                    <li><a class="dropdown-item" href="#">My Profile </a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Profile Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Profile History</a></li>
+                    </ul>
+                    {% endif %}
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Find Conversations" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
           </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse" id="navbarsExample07XL">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item active" style="padding-left: 10px; padding-right: 10px;">
-                <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/">Home</a>
-              </li>
-              <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
-                <a class="nav-link" href="http://127.0.0.1:8000/login/">Login</a>
-              </li>
-              <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
-                <a class="nav-link" href="http://127.0.0.1:8000/login/logout/">Logout</a>
-              </li>
-              <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
-                <a class="nav-link" href="#">Sign Up</a>
-              </li>
-              <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
-                <a class="nav-link" href="#">Settings</a>
-              </li>
-              <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
-                <a class="nav-link" href="#">Help</a>
-              </li>
-              <li class="nav-item dropdown" style="padding-left: 10px; padding-right: 10px;">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Conversations</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
-                  <li><a class="dropdown-item" href="#">Chats</a></li>
-                  <li><a class="dropdown-item" href="#">Hangouts</a></li>
-                  <li><a class="dropdown-item" href="#">Calls</a></li>
-                </ul>
-                  <li>
-                    <li class="nav-item dropdown" style="padding-left: 10px; padding-right: 10px;">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
-                  <li><a class="dropdown-item" href="#">My Profile </a></li>
-                  <li><a class="dropdown-item" href="#">Profile Settings</a></li>
-                  <li><a class="dropdown-item" href="#">Profile History</a></li>
-                </ul>
-                  </li>
-            <form>
-              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-            </form>
-    
-              
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
-    <div class="container">
-      {% block content %}
-      {% endblock %}
+
+    <div style='display: none;' id='vertical-content'>
+      <h1>Content</h1>
     </div>
+
+    {% block content %}
+    {% endblock %}
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>

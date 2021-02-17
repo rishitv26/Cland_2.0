@@ -22,4 +22,5 @@ urlpatterns = [
     path('login/', include('login.urls')),
     path('create-account/', include('register.urls')),
     path('pannels/', include('pannels.urls')),
+    path('conversations/', include('conversations.urls')),
 ]

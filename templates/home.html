@@ -1,6 +1,7 @@
 {%extends "layout.html"%}
 
 {%block content%}
+<<<<<<< HEAD
   
   <!-- Custom styles for this template -->
 
@@ -91,9 +92,25 @@
 
 
   <!-- START THE FEATURETTES -->
+=======
+  {% if not user.is_authenticated %}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <main>  
+  <div class="flexer">
+    <header id="title">  
+        <h1 id='header'>Welcome!</h1>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
+              metus.
+              Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    </header>
+  </div>
+>>>>>>> b2de6d0b7f262a165c7c244182cd81314fcea72b
 
+<div class='container'>      
   <hr class="featurette-divider">
 
+<<<<<<< HEAD
   <div class="row featurette">
     <div class="col-md-7">
       <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
@@ -104,9 +121,51 @@
 
     </div>
   </div>
+=======
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">First featurette heading. <span
+                        class="text-muted">It’ll blow your mind.</span></h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
+                    tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5">
+                <svg aria-label="Placeholder: 500x500"
+                     class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                     focusable="false" height="500" preserveAspectRatio="xMidYMid slice" role="img"
+                     width="500" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
+                    <rect fill="#eee" height="100%" width="100%"/>
+                    <text dy=".3em" fill="#aaa" x="50%" y="50%">500x500</text>
+                </svg>
 
-  <hr class="featurette-divider">
+            </div>
+        </div>
+>>>>>>> b2de6d0b7f262a165c7c244182cd81314fcea72b
 
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Oh yeah, it’s that good. <span
+                        class="text-muted">See for yourself.</span></h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
+                    tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <svg aria-label="Placeholder: 500x500"
+                     class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                     focusable="false" height="500" preserveAspectRatio="xMidYMid slice" role="img"
+                     width="500" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
+                    <rect fill="#eee" height="100%" width="100%"/>
+                    <text dy=".3em" fill="#aaa" x="50%" y="50%">500x500</text>
+                </svg>
+
+            </div>
+        </div>
+
+<<<<<<< HEAD
   <div class="row featurette">
     <div class="col-md-7 order-md-2">
       <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
@@ -114,19 +173,78 @@
     </div>
     <div class="col-md-5 order-md-1">
       <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em" src ="avatar-default-icon">500x500</text></svg>
+=======
+        <hr class="featurette-divider">
 
-    </div>
-  </div>
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
+                    tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5">
+                <svg aria-label="Placeholder: 500x500"
+                     class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                     focusable="false" height="500" preserveAspectRatio="xMidYMid slice" role="img"
+                     width="500" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
+                    <rect fill="#eee" height="100%" width="100%"/>
+                    <text dy=".3em" fill="#aaa" x="50%" y="50%">500x500</text>
+                </svg>
 
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+        <!-- FOOTER -->
+        <footer class="">
+            <div id="back-to-top"><p class="float-end"><a href="#">Back to top</a></p></div>
+            <p>&copy; 2021-() Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+    </main>
+</div>
+>>>>>>> b2de6d0b7f262a165c7c244182cd81314fcea72b
+
+
+<<<<<<< HEAD
   <!-- /END THE FEATURETTES -->
+=======
+    {% else %}
 
-</div><!-- /.container -->
+    <main>
+        <div class="container">
+            <h1 style="padding-top: 10px;">Hello, {{user.first_name}}</h1>
+            <p><strong>YOUR CONVERSATIONS:</strong></p>
 
+            <hr class="featurette-divider">
+        
+            <div class="row">
+                {% for con in cons %}
+                    <div class="column">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{ con.image_url }}" class="card-img-top" alt="{{ con.title }}">
+                            <div class="card-body">
+                              <h5 class="card-title">{{ con.title }}</h5>
+                              <p class="card-text">{{ con.description }}</p>
+                              <a href="" class="btn btn-primary">Go To Conversation</a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <h4>You arent involed in any conversations as per now...</h4>
+                {% endfor %}
+            </div>
 
-<!-- FOOTER -->
-<footer class="container">
-  <p class="float-end"><a href="#">Back to top</a></p>
-  <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
+            <hr class="featurette-divider">
+
+        </div>
 </main>
+>>>>>>> b2de6d0b7f262a165c7c244182cd81314fcea72b
+
+
+{% endif %}
+
 {%endblock%}
