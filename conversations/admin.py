@@ -1,3 +1,11 @@
 from django.contrib import admin
+from .models import Conversations
 
-# Register your models here.
+class ConversationsAdmin(admin.ModelAdmin):
+    list_display = [
+        'title',
+        'admin',
+        'description',
+    ]
+
+admin.site.register(Conversations, ConversationsAdmin)
