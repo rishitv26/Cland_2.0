@@ -220,22 +220,7 @@
 
             <hr class="featurette-divider">
         
-            <div class="row">
-                {% for con in cons %}
-                    <div class="column">
-                        <div class="card" style="width: 18rem;">
-                            <img src="{{ con.image_url }}" class="card-img-top" alt="{{ con.title }}">
-                            <div class="card-body">
-                              <h5 class="card-title">{{ con.title }}</h5>
-                              <p class="card-text">{{ con.description }}</p>
-                              <a href="" class="btn btn-primary">Go To Conversation</a>
-                            </div>
-                        </div>
-                    </div>
-                {% empty %}
-                    <h4>You arent involed in any conversations as per now...</h4>
-                {% endfor %}
-            </div>
+        
 
             <hr class="featurette-divider">
 
