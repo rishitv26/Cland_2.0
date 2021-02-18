@@ -1,9 +1,8 @@
 from django.shortcuts import render
 
 def index(request):
-<<<<<<< HEAD
-    return render(request, "home.html")
-    
-=======
-    return render(request, "home.html")
->>>>>>> parent of b2de6d0... sdgvye
+    cons = Conversations.objects.all()
+
+    return render(request, "home.html", {
+        'cons': cons
+    })
