@@ -183,7 +183,22 @@
 
             <hr class="featurette-divider">
         
-        
+            <div class='row'>
+                {% for con in cons %}
+                
+                <div style="width: 50%">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ con.image_url }}" class="card-img-top" alt="{{ con.title }}">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ con.title }}</h5>
+                          <p class="card-text">{{ con.description }}</p>
+                          <a href="#" class="btn btn-primary">Go to conversation</a>
+                        </div>
+                      </div>
+                </div>
+
+                {% endfor %}
+            </div>
 
             <hr class="featurette-divider">
 
