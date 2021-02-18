@@ -5,4 +5,4 @@ def index(request):
 
     return render(request, "home.html", {
         'cons': cons
-    })
+    }) # thega
