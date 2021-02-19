@@ -11,7 +11,7 @@
 
     <style>
       body {
-      background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-011.jpg');
+      background-image: url('https://images.pexels.com/photos/7294/garden.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
       }
   
       .form-signin {
@@ -67,42 +67,40 @@
       margin: 10 auto;
       }
   
-      body {
-      padding-right: 1000px;
-      }
-  
   </style>
 
   </head>
   <body>
     <main class="form-signin">
+      <center>  
         <div id="box">
-            <div id="padding">
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    <img class="mb-4"
-                         src="https://cdn.freebiesupply.com/logos/large/2x/bootstrap-4-logo-png-transparent.png" alt=""
-                         width="150px">
-                    <h1 align="center" class="h3 mb-3 fw-normal">Log into Conversation Realms</h1>
-                    <label for="inputEmail" class="visually-hidden">Username</label>
-                    <input type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus
-                           name="username"><br>
-                    <label for="inputPassword" class="visually-hidden">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required
-                           name="password">
-                    <div class="checkbox mb-3">
-                    </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-                    <p class="text muted">&copy; 2020-2021</p>
-                </form>
-                
-                <div id="popup" class="container">
-                    {% for message in messages %}
-                    <h3>{{ message }}</h3>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+              <div id="padding">
+                  <form action="" method="POST">
+                      {% csrf_token %}
+                      <img class="mb-4"
+                          src="https://cdn.freebiesupply.com/logos/large/2x/bootstrap-4-logo-png-transparent.png" alt=""
+                          width="150px">
+                      <h1 align="center" class="h3 mb-3 fw-normal">Log into Conversation Realms</h1>
+                      <label for="inputEmail" class="visually-hidden">Username</label>
+                      <input type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus
+                            name="username"><br>
+                      <label for="inputPassword" class="visually-hidden">Password</label>
+                      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required
+                            name="password">
+                      <div class="checkbox mb-3">
+                      </div>
+                      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                      <p class="text muted">&copy; 2020-2021</p>
+                  </form>
+                  
+                  <div id="popup" class="container">
+                      {% for message in messages %}
+                      <h3>{{ message }}</h3>
+                      {% endfor %}
+                  </div>
+              </div>
+          </div>
+        </center>
     
     
     </main>
