@@ -187,27 +187,16 @@
                 {% for con in cons %}
                 <li class="list-group-item">
                   <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                  <span style='text-align: left;'>{{ con.title }}</span><span class='text-muted' style="text-align: right;">admin: {{ con.admin.capitalize }}</span>
+                  <label>{{ con.title }}</label>
+                  <span>- 
+                    
+                    {{ con.description }}
+                    
+                  </span>
                 </li>
                 {% endfor %}
               </ul>
         
-            <!-- <div class='row'>
-                {% for con in cons %}
-                
-                <div style="width: 30%">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ con.image_url }}" class="card-img-top" alt="{{ con.title }}">
-                        <div class="card-body">
-                          <h5 class="card-title">{{ con.title }}</h5>
-                          <p class="card-text">{{ con.description }}</p>
-                          <a href="#" class="btn btn-primary">Go to conversation</a>
-                        </div>
-                      </div>
-                </div>
-
-                {% endfor %}
-            </div> -->
 
             <hr class="featurette-divider">
 
