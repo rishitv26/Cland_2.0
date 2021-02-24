@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from conversations.models import Conversations
+from corporations.models import *
 
 def index(request):
-    con = Conversations.objects.all()
+    con = Corporation.objects.all()
     return render(request, "home.html", {
         'cons': con
     })
