@@ -172,9 +172,9 @@
 
 {% else %}
   <main class='container' style='padding-top: 5%'>
-    <div>
-        <h1>Hello, {{ request.user.first_name }}</h1>
-    </div>
+    <!-- <div style="background-color: solid black;">
+      <h1>lolol</h1>
+    </div> -->
   <div class="my-3 p-3 bg-white rounded shadow-sm">
     <h6 class="border-bottom pb-2 mb-0">Conversations You Are Involved In:</h6>
     <div>
@@ -184,7 +184,7 @@
 
         <p class="pb-3 mb-0 small lh-sm border-bottom">
           <strong class="d-block text-gray-dark">{{ con.title }}</strong>
-          {{ con.description }} <a target='_blank' href='https://getbootstrap.com/docs/4.0/components/buttons/'>Go To Chat</a>
+          {{ con.description }} <a target='' href='https://getbootstrap.com/docs/4.0/components/buttons/'>Go To Chat</a>
         </p>
       </div>
       {% empty %}
