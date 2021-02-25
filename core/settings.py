@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'register',
     'pannels',
     'conversations',
+    'corporations',
 ]
 
 MIDDLEWARE = [
