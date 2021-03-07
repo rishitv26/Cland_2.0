@@ -47,48 +47,12 @@
                 <li class="nav-item active" style="padding-left: 10px; padding-right: 10px">
                   <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/">Home</a>
                 </li>
-                {% if not user.is_authenticated %}
                 <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
                   <a class="nav-link" href="http://127.0.0.1:8000/login/">Login</a>
                 </li>
-                {% else %}
-                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
-                  <a class="nav-link" href="http://127.0.0.1:8000/login/logout/">Logout</a>
-                </li>
-                {% endif %}
-                {% if not user.is_authenticated %}
                 <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
                   <a class="nav-link" href="http://127.0.0.1:8000/create-account/">Sign Up</a>
                 </li>
-                {% else %}
-                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
-                  <a class="nav-link" href="#">Settings</a>
-                </li>
-                
-                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
-                  <a class="nav-link" href="#">Help</a>
-                </li>
-                
-                <li class="nav-item dropdown" style="padding-left: 10px; padding-right: 10px;">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Conversations</a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
-                    <li><a class="dropdown-item" href="#">Chats</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Hangouts</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Calls</a></li>
-                  </ul>
-                    <li>
-                      <li class="nav-item dropdown" style="padding-left: 10px; padding-right: 10px;">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
-                    <li><a class="dropdown-item" href="#">My Profile </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Profile Settings</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Profile History</a></li>
-                    </ul>
-                    {% endif %}
               </ul>
               <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Find Conversations" aria-label="Search">
@@ -118,7 +82,7 @@
                   <a class="nav-link" href="#">Notifications</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Logout</a>
+                  <a class="nav-link" href="http://127.0.0.1:8000/login/logout/">Logout</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
