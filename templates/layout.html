@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>| Conversation Realms |</title>
+
+    <style>
+       #title {
+        height: 500%;
+        width: 100%;
+        text-align: center;
+
+        /* put title background image here: */
+        background-image: url("https://drscdn.500px.org/photo/224226723/m%3D2048/v2?sig=98f73dda3c8af34384e01d46702feb68c615f7279b58f0d03cee7e7b4acd82fc");
+        color: black;
+        overflow: auto;
+        padding: 200px;
+        margin-bottom: 100px;
+        }
+
+    </style>
+
+  </head>
+  
+  {% if user.is_authenticated %}
+  <body class="bg-light">
+  {% else %}
+  <body>
+  {% endif %}
+    <header>
+      <div>
+        {% if not user.is_authenticated %}
+        <nav class="navbar navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item active" style="padding-left: 10px; padding-right: 10px">
+                  <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/">Home</a>
+                </li>
+                {% if not user.is_authenticated %}
+                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link" href="http://127.0.0.1:8000/login/">Login</a>
+                </li>
+                {% else %}
+                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link" href="http://127.0.0.1:8000/login/logout/">Logout</a>
+                </li>
+                {% endif %}
+                {% if not user.is_authenticated %}
+                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link" href="http://127.0.0.1:8000/create-account/">Sign Up</a>
+                </li>
+                {% else %}
+                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link" href="#">Settings</a>
+                </li>
+                
+                <li class="nav-item" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link" href="#">Help</a>
+                </li>
+                
+                <li class="nav-item dropdown" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Conversations</a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
+                    <li><a class="dropdown-item" href="#">Chats</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Hangouts</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Calls</a></li>
+                  </ul>
+                    <li>
+                      <li class="nav-item dropdown" style="padding-left: 10px; padding-right: 10px;">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
+                    <li><a class="dropdown-item" href="#">My Profile </a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Profile Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Profile History</a></li>
+                    </ul>
+                    {% endif %}
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Find Conversations" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+        {% else %}
+
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+          <div class="container-fluid">
+            <a class="navbar-brand" href=""><div>
+              <img src="https://eecs.ceas.uc.edu/DDEL/images/default_display_picture.png/@@images/def9ae63-e4c8-4b1d-a55a-b4b18781883f.png" alt="" width="40" height="40"
+              style="border-radius: 20px;">
+            </div></a>
+            <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" aria-current="page" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Notifications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Logout</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        {% endif %}
+      </div>
+    </header>
+
+
+    {% block content %}
+    {% endblock %}
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>
