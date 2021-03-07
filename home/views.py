@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from corporations.models import *
+from conversations.models import *
 
 def index(request):
     con = Corporation.objects.all()
