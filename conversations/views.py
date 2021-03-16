@@ -6,6 +6,7 @@ def create_chat(request):
 
 def corporation(request, id):
     
+    all_ids = None
     all_ids = Corporation.objects.get(
         url_id=id
     )
