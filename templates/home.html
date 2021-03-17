@@ -182,12 +182,12 @@
       <div class="d-flex text-muted pt-3">
         <img src='{{ con.logo }}' class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="55" height="55" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#e83e8c">
 
-        <p class="pb-3 mb-0 small lh-sm border-bottom">
+        <div class="pb-3 mb-0 small lh-sm border-bottom">
 
           <strong class="d-block text-gray-dark">{{ con.name }}</strong>
-          {{ con.description }} <br><a target='_blank' href='https://getbootstrap.com/docs/4.0/components/buttons/'>Go To Corporation</a>
+          {{ con.description }} <br><a target='_blank' href='http://127.0.0.1:8000/conversations/{{ con.url_id }}'>Go To Conversation</a>
 
-        </p>
+        </div>
       </div>
       {% empty %}
       {% endfor %}
