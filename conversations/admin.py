@@ -2,11 +2,8 @@ from django.contrib import admin
 from .models import *
 
 
-class ConversationsAdmin(admin.ModelAdmin):
-    list_display = ['title', 'admin', 'image_url', 'description']
+class ConversationAdmin(admin.ModelAdmin):
+    list_display = ['name', 'url_id', 'description']
 
-class CorporationAdmin(admin.ModelAdmin):
-    list_display = ['name', 'description', 'url_id']
 
-admin.site.register(Conversations, ConversationsAdmin)
-admin.site.register(Corporation, CorporationAdmin)
+admin.site.register(Conversation, ConversationAdmin)

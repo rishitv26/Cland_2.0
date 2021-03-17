@@ -7,12 +7,11 @@ def create_chat(request):
 def corporation(request, id):
     
     all_ids = None
-    all_ids = Corporation.objects.get(
+    all_ids = Conversation.objects.get(
         url_id=id
     )
 
 
-    return render(request, 'corporation.html', {
-        'corporation': id,
+    return render(request, 'conversation.html', {
         'ids': all_ids
     })
