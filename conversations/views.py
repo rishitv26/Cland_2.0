@@ -4,7 +4,7 @@ from .models import *
 def create_chat(request):
     return render(request, 'create-chat.html')
 
-def corporation(request, id):
+def conversation(request, id):
     
     all_ids = None
     all_ids = Conversation.objects.get(

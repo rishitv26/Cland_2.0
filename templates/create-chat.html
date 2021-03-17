@@ -11,14 +11,14 @@
 
           src="https://www.pngitem.com/pimgs/m/77-773209_transparent-background-handshake-clipart-hd-png-download.png" 
           alt="handshake" height="172">
-          <h2>Create a Corporation!</h2>
+          <h2>Create a Conversation!</h2>
         </div>
     
         <div class="row g-3">
           <div class="col-md-5 col-lg-4 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-              <span class="text-muted">Staff:</span>
-              <span class="badge bg-secondary rounded-pill">3</span>
+              <span class="text-muted">Participants:</span>
+              <button class="badge bg-secondary rounded-pill">+</button>
             </h4>
             <ul class="list-group mb-3">
               <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -54,34 +54,28 @@
             <form class="needs-validation" novalidate>
               <div class="row g-3">
                 <div class="col-sm-6">
-                  <label for="firstName" class="form-label">Corporation Name</label>
+                  <label for="firstName" class="form-label">Conversation Name</label>
                   <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
                   <div class="invalid-feedback">
-                    Valid Corporation Name is required.
+                    Valid Conversation Name is required.
                   </div>
                 </div>
     
                 <div class="col-12">
                   <label for="address" class="form-label">Description</label>
-                  <input type="text" minlenght='200' class="form-control" id="address" placeholder="description" required>
+                  <input type="text" maxlength="75" class="form-control" id="address" placeholder="description" required>
                 </div>
     
                 <div class="col-12" style='display: none;'>
                   <label for="address2" class="form-label"><span class="text-muted"></span></label>
                   <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
                 </div>
-    
-                <div class="col-md-5">
-                  <label for="country" class="form-label">Country</label>
-                  <select class="form-select" id="country" required>
-                    <option value="">Choose...</option>
-                    <option>United States</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Please select a valid country.
-                  </div>
+  
+                <div class="col-12">
+                  <label for="address" class="form-label">Logo</label>
+                  <input type="text" maxlength="75" class="form-control" id="address" placeholder="description" required>
                 </div>
-    
+                
                 <div class="col-md-4">
                   <label for="state" class="form-label">State</label>
                   <select class="form-select" id="state" required>
