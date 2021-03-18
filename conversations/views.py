@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import *
 
 def create_chat(request):
+    
+    
     return render(request, 'create-chat.html')
 
 def conversation(request, id):
