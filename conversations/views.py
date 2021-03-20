@@ -3,6 +3,7 @@ from .models import *
 from django.contrib.auth.models import User, auth
 
 def create_chat(request):
+    all_users = User.objects.all()
     if request.method == 'POST':
         name = request.POST['name']
         description = request.POST['description']
@@ -11,7 +12,9 @@ def create_chat(request):
         is_permission = request.POST['is_permission']
     
     else:
-        return render(request, 'create-chat.html')
+        return render(request, 'create-chat.html', {
+            'users': all_users
+        })
 
 def conversation(request, id):
     
