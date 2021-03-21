@@ -18,7 +18,7 @@
           <div class="col-md-5 col-lg-4 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
               <span class="text-muted">Participants:</span>
-              <button type='button' class="badge bg-secondary rounded-pill; btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+</button>
+              <button type='button' class="badge bg-secondary rounded-pill" id='button-disable' data-bs-toggle="modal" data-bs-target="#staticBackdrop">+</button>
             </h4>
             <ul class="list-group mb-3">
               <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -38,7 +38,7 @@
               <div class="row g-3">
                 <div class="col-sm-6">
                   <label class="form-label">Conversation Name</label>
-                  <input type="text" class="form-control" placeholder="Conversation Name" name='name' required>
+                  <input type="text" class="form-control" placeholder="Conversation Name" name='name' id='chat-name' required>
                   <div class="invalid-feedback">
                     Valid Conversation Name is required.
                   </div>
@@ -46,7 +46,7 @@
     
                 <div class="col-12">
                   <label class="form-label">Description</label>
-                  <input type="text" maxlength="75" class="form-control" placeholder="maximum of 75 characters" name='description' required>
+                  <input type="text" maxlength="75" class="form-control" placeholder="maximum of 75 characters" name='description' id='chat-description' required>
                   <div class="invalid-feedback">
                     Valid Description is required.
                   </div>
@@ -54,7 +54,7 @@
   
                 <div class="col-12">
                   <label class="form-label">Logo</label>
-                  <input type="url" class="form-control" placeholder="logo of your Conversation" name='logo' required>
+                  <input type="url" class="form-control" id='chat-logo' placeholder="logo of your Conversation" name='logo' required>
                   <div class="invalid-feedback">
                     Invalid Logo.
                   </div>
@@ -68,7 +68,7 @@
                 </div>
     
                 <div class="form-check">
-                  <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked>
+                  <input name="paymentMethod" type="radio" class="form-check-input" checked>
                   <label class="form-check-label" name='is_permission'>Join with participant's permission</label>
                 </div>
               </div>
@@ -89,6 +89,13 @@
           <li class="list-inline-item"><a href="#">Support</a></li>
         </ul>
       </footer>
+      <script>
+        const d = document;
+        const button = d.querySelector("#button-disable");
+        const name = d.querySelector("#chat-name");
+        const des = d.querySelector("#chat-description");
+        const logo = d.querySelector("#chat-logo");
+      </script>
 </div>
 
 {% endblock %}

@@ -114,12 +114,16 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action='' method='POST' class="needs-validation">
+            <form method='POST' class="needs-validation">
               {% csrf_token %}
-              <input type='text' id='name' name='participant' placeholder="User name." class='form-control' required><br>
-              <div class="invalid-feedback">
-                invalid User, check search again.
-              </div>
+              <input type='text' list='users' name='participant' placeholder="Username" class='form-control' required><br>
+              <datalist id='users'>
+                {% for i in users %}
+                <option>{{ i.username }}</option>
+                {% empty %}
+                <option>Username Not Found</option>
+                {% endfor %}
+              </datalist>
               <button class="w-100 btn btn-primary btn-lg" type="submit">Select User</button>
             </form>
           </div>
