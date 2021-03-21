@@ -8,6 +8,7 @@ def register(request):
         Username = request.POST['username']
         Email = request.POST['email']
         FullName = request.POST['name']
+        LastName = request.POST['last_name']
         Password = request.POST['passwordD']
         Passwordcon = request.POST['passwordC']
 
@@ -19,7 +20,7 @@ def register(request):
                 messages.info(request, "Email is already used.")
                 return render(request, 'register.html')
             else:
-                user = User.objects.create_user(username=Username, password=Passwordcon, email=Email, first_name=FullName, last_name='no data')
+                user = User.objects.create_user(username=Username, password=Passwordcon, email=Email, first_name=FullName, last_name=LastName)
                 user.save()
                 return redirect("/")
         else:

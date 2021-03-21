@@ -18,7 +18,7 @@
           <div class="col-md-5 col-lg-4 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
               <span class="text-muted">Participants:</span>
-              <button type='button' class="badge bg-secondary rounded-pill" id='button-disable' data-bs-toggle="modal" data-bs-target="#staticBackdrop" disabled>+</button>
+              <button type='button' class="badge bg-secondary rounded-pill" id='button-disable' data-bs-toggle="modal" data-bs-target="#staticBackdrop">+</button>
             </h4>
             <ul class="list-group mb-3">
               <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -60,18 +60,6 @@
                   </div>
                 </div>
                 <br>
-                
-                <div class='my-3'>
-                <div class="form-check">
-                  <input id="credit" name="paymentMethod" type="radio" class="form-check-input">
-                  <label class="form-check-label" name='is_link'>Join with Link (Link will be emailed to participants)</label>
-                </div>
-    
-                <div class="form-check">
-                  <input name="paymentMethod" type="radio" class="form-check-input" checked>
-                  <label class="form-check-label" name='is_permission'>Join with participant's permission</label>
-                </div>
-              </div>
     
               <hr class="my-4">
     
@@ -91,27 +79,13 @@
       </footer>
       <script>
         const d = document;
-        const button = d.querySelector("#button-disable");
-        const name = d.querySelector("#chat-name");
-        const des = d.querySelector("#chat-description");
-        const logo = d.querySelector("#chat-logo");
+        const button = d.querySelector("#select-user");
+        const field = d.querySelector("#selector-bar");
 
-        // if (d.addEventListener("keypress")) {
-        //   if (name.value != "" & des.value != "" & logo.value != "") {
-        //     button.disabled = false;
-        //   }
-        // }
-
-        button.addEventListener('keypress', function () {
-          if (name.value != "") {
-            if (des.value != "") {
-              if (logo.value != "") {
-                button.disabled = false;
-              }
-            }
-          }
+        button.onclick(function() {
+          const val = field.value;
         })
-        
+
       </script>
 </div>
 
