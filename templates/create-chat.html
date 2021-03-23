@@ -60,10 +60,33 @@
                   </div>
                 </div>
                 <br>
+
+                <input class='invisible-input' name='participant' value='' type='text' style="display: none;">
     
               <hr class="my-4">
     
               <button class="w-100 btn btn-primary btn-lg" type="submit">Create Conversation</button>
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel"><strong>CHOOSE PARTICIPANT</strong></h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type='text' list='users' name='participant' placeholder="Username" class='form-control' id='selector-bar' required><br>
+                        <datalist id='users'>
+                          {% for i in users %}
+                          <option>{{ i.first_name }} {{ i.last_name }}</option>
+                          {% endfor %}
+                        </datalist>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" id='select-user' data-bs-dismiss="modal">Select User</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
         </div>
@@ -77,13 +100,18 @@
           <li class="list-inline-item"><a href="#">Support</a></li>
         </ul>
       </footer>
+
       <script>
         const d = document;
         const button = d.querySelector("#select-user");
         const field = d.querySelector("#selector-bar");
+        const send = d.querySelector(".invisible-input");
 
         button.onclick(function() {
           const val = field.value;
+          if (val != '') {
+            send.value = `${field.value}`;
+          } 
         })
 
       </script>

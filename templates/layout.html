@@ -106,30 +106,6 @@
       </div>
     </header>
 
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel"><strong>CHOOSE PARTICIPANT</strong></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form method='POST' class="needs-validation">
-              {% csrf_token %}
-              <input type='text' list='users' name='participant' placeholder="Username" class='form-control' id='selector-bar' required><br>
-              <datalist id='users'>
-                {% for i in users %}
-                <option>{{ i.first_name }} {{ i.last_name }}</option>
-                {% endfor %}
-              </datalist>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" id='select-user' data-bs-dismiss="modal">Select User</button>
-          </div>
-        </div>
-      </div>
-    </div>
     {% block content %}
     {% endblock %}
     
