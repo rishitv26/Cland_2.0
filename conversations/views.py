@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import *
 from django.contrib.auth.models import User, auth
 import random
@@ -11,18 +11,19 @@ def create_chat(request):
         logo = request.POST['logo']
         participant = request.POST['participant']
 
-        part_names = participant.split()
-        print(part_names)
+        print(participant)
 
-        # selected_user = User.objects.filter(
-        #     first_name = part_names[1],
-        #     last_name = part_names[2]
-        # )
+        selected_user = None
+        selected_user = get_object_or_404(
+            User, username=participant
+        )
 
-        # url_id = round(random.randrange(100000000000000, 999999999999999))
+        url_id = round(random.randrange(100000000000000, 999999999999999))
 
-        # conversation = Conversation(name=name, logo=logo, description=description, participants=selected_user, url_id=url_id)
-        # conversation.save()
+        conversation = Conversation(name=name, logo=logo, description=description, url_id=url_id,)
+        conversation.participants.set(selected_user)
+        print(f'{conversation}')
+        conversation.save()
 
         return render(request, 'create-chat.html', {
             'users': all_users

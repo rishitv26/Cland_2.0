@@ -77,7 +77,7 @@
                         <input type='text' list='users' name='participant' placeholder="Username" class='form-control' id='selector-bar' required><br>
                         <datalist id='users'>
                           {% for i in users %}
-                          <option>{{ i.first_name }} {{ i.last_name }}</option>
+                          <option>{{ i.username }}</option>
                           {% endfor %}
                         </datalist>
                     </div>
