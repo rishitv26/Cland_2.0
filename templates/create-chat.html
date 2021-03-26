@@ -71,7 +71,6 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title" id="staticBackdropLabel"><strong>CHOOSE PARTICIPANT</strong></h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <input type='text' list='users' name='participant' placeholder="Username" class='form-control' id='selector-bar' required><br>
@@ -105,13 +104,15 @@
         const d = document;
         const button = d.querySelector("#select-user");
         const field = d.querySelector("#selector-bar");
-        const send = d.querySelector(".invisible-input");
 
-        button.onclick(function() {
-          const val = field.value;
-          if (val != '') {
-            send.value = `${field.value}`;
-          } 
+        button.disabled = true
+
+        d.addEventListener('keypress', function() {
+          if (field.value == '') {
+            button.disabled = true
+          } else {
+            button.disabled = false
+          }
         })
 
       </script>

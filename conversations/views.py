@@ -4,26 +4,23 @@ from django.contrib.auth.models import User, auth
 import random
 
 def create_chat(request):
-    all_users = User.objects.all()
+    all_users = User.objects.all().exclude(username=request.user.username)
     if request.method == 'POST':
         name = request.POST['name']
         description = request.POST['description']
         logo = request.POST['logo']
         participant = request.POST['participant']
 
-        print(participant)
-
-        selected_user = None
         selected_user = get_object_or_404(
-            User, username=participant
+            User, username = participant
         )
 
         url_id = round(random.randrange(100000000000000, 999999999999999))
 
         conversation = Conversation(name=name, logo=logo, description=description, url_id=url_id,)
-        conversation.participants.set(selected_user)
-        print(f'{conversation}')
+        participants = Conversation_participants(conversation=conversation, participant=selected_user)
         conversation.save()
+        participants.save()
 
         return render(request, 'create-chat.html', {
             'users': all_users
