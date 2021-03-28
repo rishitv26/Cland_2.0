@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from django.contrib.auth.models import User, auth
 import random
+from django.core.mail import send_mail
 
 def create_chat(request):
     all_users = User.objects.all().exclude(username=request.user.username)
@@ -35,10 +36,8 @@ def create_chat(request):
         participants = Conversation_participants(conversation=conversation, participant=selected_user)
         conversation.save()
         participants.save()
-
-        return render(request, 'home.html', {
-            'users': all_users
-        })
+        
+        return redirect('/')
 
     else:
         return render(request, 'create-chat.html', {
