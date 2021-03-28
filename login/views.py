@@ -12,7 +12,10 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            if request.user.username == 'rishit':
+                return redirect('http://127.0.0.1:8000/pannels/admin/')
+            else:
+                return redirect('/')
         else:
             messages.error(request, "Invalid Credentials")
             return render(request, 'login.html')

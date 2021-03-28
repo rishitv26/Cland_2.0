@@ -26,9 +26,14 @@
                   <small class="text-muted">NOTE: you can only choose 1 participant right now, but you can add others later.</small>
                 </div>
               </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0" id='selected-participant'></h6>
+                </div>
+              </li>
               <li class="list-group-item d-flex justify-content-between">
                 <span>Total Participants</span>
-                <strong>NONE</strong>
+                <strong id='participant-amount'>NONE</strong>
               </li>
             </ul>
           </div>
@@ -46,10 +51,7 @@
     
                 <div class="col-12">
                   <label class="form-label">Description</label>
-                  <input type="text" maxlength="75" class="form-control" placeholder="maximum of 75 characters" name='description' id='chat-description' required>
-                  <div class="invalid-feedback">
-                    Valid Description is required.
-                  </div>
+                  <input type="text" maxlength="75" class="form-control" placeholder="maximum of 75 characters" name='description' id='chat-description'>
                 </div>
   
                 <div class="col-12">
@@ -104,16 +106,36 @@
         const d = document;
         const button = d.querySelector("#select-user");
         const field = d.querySelector("#selector-bar");
+        const user = d.querySelector("#selected-participant");
+        const amount = d.querySelector("#participant-amount")
 
         button.disabled = true
 
-        d.addEventListener('keypress', function() {
+        d.addEventListener('input', function() {
           if (field.value == '') {
             button.disabled = true
           } else {
             button.disabled = false
           }
         })
+
+        button.addEventListener('click', function () {
+          if (field.value == '') {
+            dontShowUser();
+          } else {
+            showUser();
+          }
+        })
+
+        function showUser () {
+          user.innerHTML = field.value;
+          amount.innerHTML = '1';
+        }
+
+        function dontShowUser () {
+          user.innerHTML = '';
+          amount.innerHTML = 'NONE';
+        }
 
       </script>
 </div>

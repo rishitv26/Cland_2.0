@@ -11,18 +11,32 @@ def create_chat(request):
         logo = request.POST['logo']
         participant = request.POST['participant']
 
-        selected_user = get_object_or_404(
-            User, username = participant
+        if description == '':
+            description = 'No Description'
+
+        selected_user = User.objects.get(
+            username=participant
         )
 
         url_id = round(random.randrange(100000000000000, 999999999999999))
+
+        all_ids = None
+        def check():
+            all_ids = Conversation.objects.filter(
+                url_id=url_id
+            )
+        
+        check()
+        while all_ids != None:
+            round(random.randrange(100000000000000, 999999999999999))
+            check()
 
         conversation = Conversation(name=name, logo=logo, description=description, url_id=url_id,)
         participants = Conversation_participants(conversation=conversation, participant=selected_user)
         conversation.save()
         participants.save()
 
-        return render(request, 'create-chat.html', {
+        return render(request, 'home.html', {
             'users': all_users
         })
 
