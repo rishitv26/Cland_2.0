@@ -8,27 +8,32 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <title>| Conversation Realms | {{ids.name}} |</title>
+    <title>| Conversation Realms | {{ conversation.url_id }} |</title>
     <style>
         body {
-            background-color: green;
+          background-color: rgb(219, 219, 219);
         }
 
-        #chat-content {
-            background-color: rgb(206, 206, 206);
-            border-radius: 10px 10px 10px 10px;
-            height: 100%;
+        #chat-name {
+          background-color: black;
+          display: flex;
+          position: static;
+          padding-left: 10px;
+          padding-right: 10px;
+          color: white;
+        }
+
+        #chat-title {
+          padding-top: 5px;
         }
     </style>
    </head>
   <body>
 
-    <div class="container">
-        <div id='chat-content'>
-            fyv
-        </div>
-    </div>
-    
+    <header id='chat-name'>
+      <h3 id='chat-title'><img src="{{ conversation.logo }}" alt="" width="40" height="40"style="border-radius: 20px;"><span style='padding-left: 10px;'>{{ conversation.name.capitalize }}</span></h3>
+    </header>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>
 </html>

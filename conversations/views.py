@@ -53,5 +53,5 @@ def conversation(request, id):
 
 
     return render(request, 'conversation.html', {
-        'ids': all_ids
+        'conversation': all_ids
     })

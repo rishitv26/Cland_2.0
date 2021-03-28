@@ -43,7 +43,15 @@
 
             <div class="col-12">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com" name="email" required>
+              <input type="email" class="form-control" id="email" placeholder="email@example.com" name="email" required>
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Profile Pic <span class='text-muted'>(Optional)</span></label>
+              <input type="url" class="form-control" placeholder="Your desired pic" name="pic">
               <div class="invalid-feedback">
                 Please enter a valid email address.
               </div>
