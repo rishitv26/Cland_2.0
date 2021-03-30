@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth, User
 from django.contrib import messages
-from login.models import User_pic
+from .models import *
 
 
 def register(request):
@@ -20,6 +20,8 @@ def register(request):
                 return render(request, 'register.html')
             else:
                 user = User.objects.create_user(username=Username, password=Passwordcon, email=Email, first_name=FullName, last_name=LastName)
+                if Pic == '':
+                    Pic = 'https://eecs.ceas.uc.edu/DDEL/images/default_display_picture.png/@@images/image.png'
                 user_pic = User_pic(user=user, pic=Pic)
                 user.save()
                 user_pic.save()
