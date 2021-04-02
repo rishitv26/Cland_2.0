@@ -37,6 +37,11 @@
                 <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
               <div class="invalid-feedback">
                   Your username is required.
+                  <div id='errors'>
+                    {% for message in messages %}
+                    <h3>{{ message }}</h3>
+                    {% endfor %}
+                  </div>
                 </div>
               </div>
             </div>
@@ -84,12 +89,6 @@
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="form-validation.js"></script>
-
-<div id='errors'>
-  {% for message in messages %}
-  <h3>{{ message }}</h3>
-  {% endfor %}
-</div>
 
 </div>
 {% endblock %}
